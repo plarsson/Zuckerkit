@@ -25,11 +25,12 @@ Zuckerkit: (Dictionary)
 	   - id (String)
 	   - name (String)
 	   
-Also, as part of the normal FacebookSDK integration, register your Facebook App Id in your app's URL schemes:
+Also, as part of the normal FacebookSDK integration, register your Facebook App Id in your app's URL schemes: 
+
 URL types: (Array)
- - Item 0 (Dictionary)
-   - URL Schemes (Array)
-     - Item 0 (String, set equal to your Facebook App Id)
+    - Item 0 (Dictionary)
+    	- URL Schemes (Array)
+    		- Item 0 (String, set equal to your Facebook App Id)
 	   
 In your AppDelegate.m, implement the following methods (or add to them if they already exist):
 
@@ -48,6 +49,8 @@ In your AppDelegate.m, implement the following methods (or add to them if they a
     [[Zuckerkit sharedInstance] handleDidBecomeActive];
 }
 ```
+
+
 
 #Contribution
 I've added methods to this kit as I needed them, and I haven't yet crossed path with all parts of the SDK. If you're familiar with various parts of the SDK and know of some methods that may be helpful, please feel free to contribute.
