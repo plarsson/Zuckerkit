@@ -10,7 +10,7 @@ NSDictionary *rootDictionary()
 NSString *ModeKey()
 {
     BOOL isProduction = [[rootDictionary() objectForKey:@"Production"] boolValue];
-    return isProduction ? @"Production" : @"Development";
+    return isProduction ? @"Production Keys" : @"Development Keys";
 }
 
 BOOL isProduction()
@@ -20,10 +20,10 @@ BOOL isProduction()
 
 NSString *FacebookAppId()
 {
-    return rootDictionary()[@"Facebook"][ModeKey()][@"id"];
+    return rootDictionary()[ModeKey()][@"id"];
 }
 
 NSString *FacebookDisplayName()
 {
-    return rootDictionary()[@"Facebook"][ModeKey()][@"name"];
+    return rootDictionary()[ModeKey()][@"name"];
 }

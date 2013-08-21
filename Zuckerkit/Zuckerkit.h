@@ -12,7 +12,7 @@ typedef NS_ENUM(NSInteger, FacebookAudienceType)
 
 BOOL FacebookAudienceTypeIsRestricted(FacebookAudienceType type);
 
-@interface FacebookAPIHelper : NSObject
+@interface Zuckerkit : NSObject
 
 + (instancetype)sharedInstance;
 

@@ -6,13 +6,13 @@
 #import <FacebookSDK/FBDialogs.h>
 #import <FacebookSDK/FBWebDialogs.h>
 
-@interface FacebookAPIHelper ()
+@interface Zuckerkit ()
 // single use blocks. these blocks are immediatly nulled after they are used
 @property (nonatomic, copy) void(^openBlock)(NSError *error);
 @property (nonatomic, copy) void(^permissionsBlock)(NSError *error);
 @end
 
-@implementation FacebookAPIHelper
+@implementation Zuckerkit
 
 + (instancetype)sharedInstance
 {
