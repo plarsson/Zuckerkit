@@ -1,6 +1,6 @@
 #Zuckerkit
 
-Zuckerkit is a wrapper around the SDK that makes common tasks easy. Things you can do:
+Zuckerkit is a wrapper around the Facebook SDK that makes common tasks easy. Things you can do:
 
 ``` objective-c
 - (void)openSessionWithBasicInfo:(void(^)( NSError *error))completionBlock;
@@ -54,4 +54,4 @@ Zuckerkit is a wrapper around the SDK that makes common tasks easy. Things you c
 
 
 #Contribution
-I've added methods to this kit as I needed them, and I haven't yet crossed path with all parts of the SDK. If you're familiar with various parts of the SDK and know of some methods that may be helpful, please feel free to contribute.
+I've added methods to this kit as I've needed them, and haven't yet crossed path with all parts of the SDK. If you're familiar with various parts of the SDK and know of some methods that may be helpful, please feel free to contribute.
