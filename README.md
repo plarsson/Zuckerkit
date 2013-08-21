@@ -3,15 +3,15 @@
 Zuckerkit is a wrapper around the Facebook SDK that makes common tasks easy. Things you can do:
 
 ``` objective-c
-- (void)openSessionWithBasicInfo:(void(^)( NSError *error))completionBlock;
-- (void)requestPublishPermissions:(void(^)( NSError *error))completionBlock;
-- (void)getUserInfo:(void(^)(id<FBGraphUser> user, NSError *error))completionBlock;
-- (void)openSessionWithBasicInfoThenRequestPublishPermissions:(void(^)(NSError *error))completionBlock;
-- (void)openSessionWithBasicInfoThenRequestPublishPermissionsAndGetAudienceType:(void(^)(NSError *error, FacebookAudienceType))completionBlock;
+- (void)openSessionWithBasicInfo:
+- (void)requestPublishPermissions:
+- (void)getUserInfo:
+- (void)openSessionWithBasicInfoThenRequestPublishPermissions:
+- (void)openSessionWithBasicInfoThenRequestPublishPermissionsAndGetAudienceType:
 
-- (void)getFriends:(void(^)(NSArray *friends, NSError *error))completionBlock;
-- (void)getAppAudienceType:(void(^)(FacebookAudienceType audienceType, NSError *error))completionBlock;
-- (void)showAppRequestDialogueWithMessage:(NSString*)message toUserId:(NSString*)userId;
+- (void)getFriends:
+- (void)getAppAudienceType:
+- (void)showAppRequestDialogueWithMessage:toUserId:
 ```
 
 #Usage
