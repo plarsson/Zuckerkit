@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Zuckerkit.h"
 
 @interface ViewController ()
 
@@ -17,13 +18,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self zuckerIn];
+    });
 }
 
-- (void)didReceiveMemoryWarning
+- (void)zuckerIn
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [[Zuckerkit sharedInstance] openSessionWithBasicInfoThenRequestPublishPermissions:^(NSError *error) {
+        if(error) {
+            [[[UIAlertView alloc] initWithTitle:@"Fail" message:error.description
+              delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+            return;
+        }
+        [[[UIAlertView alloc] initWithTitle:@"Success" message:@"Authorization successful."
+          delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+    }];
 }
 
 @end

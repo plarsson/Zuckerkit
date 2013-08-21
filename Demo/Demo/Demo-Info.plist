@@ -16,6 +16,15 @@
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb388403794615050</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
@@ -31,14 +40,14 @@
 			<key>name</key>
 			<string>Zuckerkit</string>
 			<key>id</key>
-			<string></string>
+			<string>388403794615050</string>
 		</dict>
 		<key>Production Keys</key>
 		<dict>
 			<key>name</key>
 			<string>Zuckerkit</string>
 			<key>id</key>
-			<string></string>
+			<string>388403794615050</string>
 		</dict>
 	</dict>
 	<key>LSRequiresIPhoneOS</key>
