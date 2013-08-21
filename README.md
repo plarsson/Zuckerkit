@@ -15,8 +15,9 @@ Zuckerkit is a wrapper around the SDK that makes common tasks easy. Things you c
 ```
 
 #Usage
-1. Create a dictionary entry in your app plist called Zuckerkit with the following format:	
-Zuckerkit: (Dictionary)
+1. Create a dictionary entry in your app plist called Zuckerkit with the following format:
+
+	Zuckerkit: (Dictionary)
 	 - Production (Boolean)
 	 - Development Keys (Dictionary)
 	   - id (String)
@@ -25,30 +26,31 @@ Zuckerkit: (Dictionary)
 	   - id (String)
 	   - name (String)
 	   
-Also, as part of the normal FacebookSDK integration, register your Facebook App Id in your app's URL schemes:
+2. Also, as part of the normal FacebookSDK integration, register your Facebook App Id in your app's URL schemes:
+	  
+	  URL types: (Array)
+ 	  - Item 0 (Dictionary)
+    	- URL Schemes (Array)
+    		- Item 0 (String, set equal to your Facebook App Id)
+    		
 	   
-	URL types: (Array)
-    	- Item 0 (Dictionary)
-    		- URL Schemes (Array)
-    			- Item 0 (String, set equal to your Facebook App Id)
-	   
-In your AppDelegate.m, implement the following methods (or add to them if they already exist):
+3. In your AppDelegate.m, implement the following methods (or add to them if they already exist):
 
-``` objective-c
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
-   sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
-    if([url.absoluteString rangeOfString:@"fb"].location != NSNotFound) {
-        return [[Zuckerkit sharedInstance] handleOpenUrl:url];
-    }
-    return NO;
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    [[Zuckerkit sharedInstance] handleDidBecomeActive];
-}
-```
+	``` objective-c
+	- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+	   sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+	{	
+	    if([url.absoluteString rangeOfString:@"fb"].location != NSNotFound) {
+	        return [[Zuckerkit sharedInstance] handleOpenUrl:url];
+	    }
+	    return NO;
+	}
+	
+	- (void)applicationDidBecomeActive:(UIApplication *)application
+	{
+	    [[Zuckerkit sharedInstance] handleDidBecomeActive];
+	}
+	```
 
 
 #Contribution
