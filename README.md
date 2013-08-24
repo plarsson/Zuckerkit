@@ -3,43 +3,43 @@
 Zuckerkit is a wrapper around the Facebook SDK that makes common tasks easy. Things you can do:
 
 
-<b>Open session with basic info</b>
+Open session with basic info
 
 ``` objective-c
 - (void)openSessionWithBasicInfo:(void(^)( NSError *error))completionBlock;
 ```
 
-<b>Request publish permissions</b>
+Request publish permissions
 
 ``` objective-c
 - (void)requestPublishPermissions:(void(^)( NSError *error))completionBlock;
 ```
 
-<b>Get user info (name, email, id, etc)</b>
+Get user info (name, email, id, etc)
 
 ``` objective-c
 - (void)getUserInfo:(void(^)(id<FBGraphUser> user, NSError *error))completionBlock;
 ```
 
-<b>Open session with basic info then request publish permissions (Facebook mandates that you open a session with read permissions before requesting publish permissions. This sequences both for you.)</b>
+Open session with basic info then request publish permissions (Facebook mandates that you open a session with read permissions before requesting publish permissions. This sequences both for you.)
 
 ``` objective-c
 - (void)openSessionWithBasicInfoThenRequestPublishPermissions:(void(^)(NSError *error))completionBlock;
 ```
 
-<b>Get friends</b>
+Get friends
 	
 ``` objective-c
 - (void)getFriends:(void(^)(NSArray *friends, NSError *error))completionBlock;
 ```
 
-<b>Get app audience type (The visibility for the app, i.e Public, Friends, Only Me)</b>
+Get app audience type (The visibility for the app, i.e Public, Friends, Only Me)
 
 ``` objective-c
 - (void)getAppAudienceType:(void(^)(FacebookAudienceType audienceType, NSError *error))completionBlock;
 ```
 
-<b>Invite friend to app via request dialogue (sends a request to a friend to join the current app)</b>
+Invite friend to app via request dialogue (sends a request to a friend to join the current app)
 	
 ``` objective-c
 - (void)showAppRequestDialogueWithMessage:(NSString*)message toUserId:(NSString*)userId;
