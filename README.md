@@ -2,17 +2,42 @@
 
 Zuckerkit is a wrapper around the Facebook SDK that makes common tasks easy. Things you can do:
 
-``` objective-c
-- (void)openSessionWithBasicInfo:
-- (void)requestPublishPermissions:
-- (void)getUserInfo:
-- (void)openSessionWithBasicInfoThenRequestPublishPermissions:
-- (void)openSessionWithBasicInfoThenRequestPublishPermissionsAndGetAudienceType:
 
-- (void)getFriends:
-- (void)getAppAudienceType:
-- (void)showAppRequestDialogueWithMessage:toUserId:
-```
+<b>Open session with basic info</b>
+
+	``` objective-c
+	- (void)openSessionWithBasicInfo:(void(^)( NSError *error))completionBlock;
+	```
+<b>Request publish permissions</b>
+
+ 	``` objective-c
+	- (void)requestPublishPermissions:(void(^)( NSError *error))completionBlock;
+	```
+<b>Get user info (name, email, id, etc)</b>
+
+	``` objective-c
+	- (void)getUserInfo:(void(^)(id<FBGraphUser> user, NSError *error))completionBlock;
+	```
+<b>Open session with basic info then request publish permissions (Facebook mandates that you open a session with read permissions before requesting publish permissions. This sequences both for you.)</b>
+
+	``` objective-c
+	- (void)openSessionWithBasicInfoThenRequestPublishPermissions:(void(^)(NSError *error))completionBlock;
+	```
+<b>Get friends</b>
+	
+	``` objective-c
+	- (void)getFriends:(void(^)(NSArray *friends, NSError *error))completionBlock;
+	```
+<b>Get app audience type (The visibility for the app, i.e Public, Friends, Only Me)</b>
+
+	``` objective-c
+	- (void)getAppAudienceType:(void(^)(FacebookAudienceType audienceType, NSError *error))completionBlock;
+	```
+<b>Invite friend to app via request dialogue (sends a request to a friend to join the current app)</b>
+	
+	``` objective-c
+	- (void)showAppRequestDialogueWithMessage:(NSString*)message toUserId:(NSString*)userId;
+	```
 
 #Usage
 1. Create a dictionary entry in your app plist called Zuckerkit with the following format:
